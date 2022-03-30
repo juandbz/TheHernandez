@@ -2,6 +2,7 @@
 - name:
   hosts: arista5
   gather_facts: True
+  vars_files: my_vars.yml
   tasks:
     - debug: 
         var: ansible_facts
