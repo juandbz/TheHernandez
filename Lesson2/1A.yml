@@ -8,3 +8,9 @@
 
     - debug:
         msg: "{{ ansible_facts.net_all_ipv4_addresses }}"
+
+    - debug: 
+        var: ansible_network_os
+
+    - debug:
+        msg: "{{ ansible_host }}"
