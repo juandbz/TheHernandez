@@ -1,0 +1,16 @@
+---
+- name: Exerise 3a
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - debug:
+        var: ansible_host
+
+- name: Another Play
+  hosts: cisco
+  gather_facts: no
+  tasks:
+    - debug:
+        var: ansible_connection
+    - debug: 
+        msg: "{{ ansible_host }}"

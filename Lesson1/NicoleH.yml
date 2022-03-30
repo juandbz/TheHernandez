@@ -1,0 +1,9 @@
+---
+- name: I love Juan
+  host: Juan
+  tasks: 
+  - ping:
+- name: Nicole
+- name: Juan
+- name: Love
+- name: DBZ

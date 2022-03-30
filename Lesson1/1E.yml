@@ -1,0 +1,20 @@
+---
+network_devices: 
+ - host: R2
+   usename: NicoleH
+   password: Juan255
+   device_type: R2
+   use_session_log: 1995
+   ip_addresses: 
+    - 1995
+    - 2021
+    - 2022
+ - host: R3
+   usename: NikkiH
+   password: JuanH
+   device_type: R3
+   use_session_log: 199503
+   ip_addresses:
+    - 5670
+    - 2340
+    - 5430
