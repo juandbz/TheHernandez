@@ -1,0 +1,8 @@
+---
+- hosts: cisco1:cisco5:cisco2:cisco6
+  name:
+  gather_facts: False
+  tasks:
+    - name: Print BGP ASN for cisco hosts
+      debug:
+        msg: "The ASN for host {{ inventory_hostname }} {{ bgp_asn }}"

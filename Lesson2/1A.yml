@@ -18,3 +18,6 @@
 
     - debug:
         var: desired_eos_version
+
+    - set_fact: 
+        device_hostname: "{{inventory_hostname}}.lab.io"
