@@ -1,0 +1,23 @@
+---
+- name:
+  hosts: arista5
+  gather_facts: True
+  vars_files: my_vars.yml
+  tasks:
+    - debug: 
+        var: ansible_facts
+
+    - debug:
+        msg: "{{ ansible_facts.net_all_ipv4_addresses }}"
+
+    - debug: 
+        var: ansible_network_os
+
+    - debug:
+        msg: "{{ ansible_host }}"
+
+    - debug:
+        var: desired_eos_version
+
+    - set_fact: 
+        device_hostname: "{{inventory_hostname}}.lab.io"
