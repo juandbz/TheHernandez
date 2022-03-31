@@ -5,4 +5,4 @@
   tasks:
     - name: Print BGP ASN for cisco hosts
       debug:
-        msg: "The ASN for host {{ inventory_hostname }} {{ bgp_asn }}"
+        msg: "The ASN for host {{ inventory_hostname }} {{ bgp_asn }}, the router-id is  {{ bgp_router_id}}"

@@ -1,4 +1,2 @@
 ---
-bgp_asn: 65002
-
 bgp_router_id: "{{loopback0}}"
