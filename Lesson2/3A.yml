@@ -1,0 +1,13 @@
+---
+- name:
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_command: 
+        commands: 
+          - show version
+          - show lldp neighbors
+      register: output
+    
+    - debug:
+        var: output["stdout_lines"][1]

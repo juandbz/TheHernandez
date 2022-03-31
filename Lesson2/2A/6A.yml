@@ -1,0 +1,15 @@
+---
+- name: 
+  hosts: arista
+  gather_facts: no 
+  tasks:
+    - eos_command: 
+        commands: show ip arp
+      register: output
+
+    
+        
+
+    - debug:
+        var: output
+

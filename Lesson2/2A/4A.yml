@@ -1,0 +1,16 @@
+---
+- name: cisco
+  hosts: cisco6
+  tasks:
+    - ios_command: 
+        commands: 
+          - command: Clear logging 
+
+            prompt: confirm
+            answer: "y"
+      register: output
+
+    - debug:
+        var: output
+
+
