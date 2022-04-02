@@ -1,0 +1,29 @@
+---
+- name: 
+  hosts: all
+  tasks: 
+    - eos_command: 
+        commands: show ip arp
+      register: show_ip_arp_eos
+      when: ansible_network_os == "eos"
+
+    - debug:
+        var: show_ip_arp_eos
+      when: ansible_network_os == "eos"
+
+    - ios_command:
+        commands: show ip arp
+      register: show_ip_arp_ios
+      when: ansible_network_os == "ios"
+
+    - debug:
+        var: show_ip_arp_ios
+      when: when: ansible_network_os == "ios"
+
+    - junos_command:
+        command: show arp   
+      register: show_arp_junos
+      when: ansible_network_os == "junos"
+    - debug:
+        var: show_arp_junos
+      when: ansible_network_os == "junos"
