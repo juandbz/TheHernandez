@@ -1,0 +1,12 @@
+---
+- name: Playbook for show lldp
+  hosts: cisco1:cisco2
+  gather_facts: no
+  tasks: 
+    - ios_command: 
+        commands: show lldp neighbors 
+      register: output
+       
+    - debug: 
+        var: output["stdout_lines"][0]
+      
