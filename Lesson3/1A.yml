@@ -1,29 +1,34 @@
 ---
 - name: 
-  hosts: all
+  hosts: arista:cisco:juniper
+  gather_facts: no
   tasks: 
     - eos_command: 
         commands: show ip arp
       register: show_ip_arp_eos
       when: ansible_network_os == "eos"
+      tags: eos
 
     - debug:
         var: show_ip_arp_eos
-      when: ansible_network_os == "eos"
+      tags: eos
 
     - ios_command:
         commands: show ip arp
       register: show_ip_arp_ios
       when: ansible_network_os == "ios"
+      tags: ios
 
     - debug:
         var: show_ip_arp_ios
-      when: when: ansible_network_os == "ios"
+      tags: ios
 
     - junos_command:
-        command: show arp   
+        commands: show arp   
       register: show_arp_junos
       when: ansible_network_os == "junos"
+      tags: junos
+
     - debug:
         var: show_arp_junos
-      when: ansible_network_os == "junos"
+      tags: junos
