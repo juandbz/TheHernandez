@@ -1,0 +1,12 @@
+!
+feature bgp
+router bgp {{ bgp_asn }}
+  router-id {{ loopback101_ip_address }}
+  address-family ipv4 unicast
+    network {{ loopback101_ip_address }}/{{ loopback101_netmask }}
+    network {{ loopback102_ip_address }}/{{ loopback102_netmask }}
+  neighbor {{ bgp_peer_ip }}
+    remote-as 22
+    description configured by ansible
+    address-family ipv4 unicast
+!

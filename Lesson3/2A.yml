@@ -1,0 +1,17 @@
+---
+- name: 
+  hosts: nxos1
+  gather_facts: no
+  tasks: 
+    - nxos_command: 
+        commands: "show vlan id {{ item }}"
+      register: vlan
+      loop:
+        - 1
+        - 2
+        - 3
+        - 4  
+
+    - debug: 
+        var: vlan["results"][3]["stdout_lines"]
+      
