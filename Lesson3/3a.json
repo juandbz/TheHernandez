@@ -1,0 +1,21 @@
+{
+    "output": {
+        "changed": false,
+        "failed": false,
+        "stdout": [
+            "Capability codes:\n    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device\n    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other\n\nDevice ID           Local Intf     Hold-time  Capability      Port ID\ntwb-sf-hpsw1        Fa4            120        B               15\n\nTotal entries displayed: 1"
+        ],
+        "stdout_lines": [
+            [
+                "Capability codes:",
+                "    (R) Router, (B) Bridge, (T) Telephone, (C) DOCSIS Cable Device",
+                "    (W) WLAN Access Point, (P) Repeater, (S) Station, (O) Other",
+                "",
+                "Device ID           Local Intf     Hold-time  Capability      Port ID",
+                "twb-sf-hpsw1        Fa4            120        B               15",
+                "",
+                "Total entries displayed: 1"
+            ]
+        ]
+    }
+}

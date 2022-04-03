@@ -1,0 +1,14 @@
+---
+- name: nxos
+  hosts: nxos1:nxos2
+  gather_facts: True
+  tasks:
+    - name: 
+      template:
+        src: jinja2.j2
+        dest: /home/juandbz255/NicoleH/Lesson3/nxos/{{ inventory_hostname }}.txt
+    
+    - name: 
+      template:
+        src: bgp.j2
+        dest: /home/juandbz255/NicoleH/Lesson3/nxos/{{ inventory_hostname }}-bgp.txt

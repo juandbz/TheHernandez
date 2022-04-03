@@ -1,0 +1,5 @@
+---
+bgp_asn: 22
+eth1_4_netmask: 30
+loopback101_netmask: 32
+loopback102_netmask: 32

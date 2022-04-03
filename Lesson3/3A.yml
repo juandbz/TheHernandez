@@ -10,3 +10,24 @@
     - debug: 
         var: output["stdout_lines"][0]
       
+    - set_fact:
+        lldp: "{{output['stdout_lines'][0]}}"
+
+    - set_fact:
+        lldp_entry: "{{item}}"
+      loop: "{{lldp}}"
+      when: "'twb-sf-hpsw1' in item"
+        
+    - debug: 
+        var: lldp_entry  
+
+    - set_fact:
+        remote_device: "{{lldp_entry.split()[0]}}"
+        local_intf: "{{ lldp_entry.split()[1]}}"
+        remote_intf: "{{lldp_entry.split()[-1]}}"
+    
+    - debug:
+        msg: 
+          - "remote device: {{remote_device}}"
+          - "local_intf: {{local_intf}}"
+          - "remote_intf: {{remote_intf}}"

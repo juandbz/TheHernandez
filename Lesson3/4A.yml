@@ -1,0 +1,10 @@
+---
+- name: jinja2
+  hosts: arista
+  gather_facts: True
+  tasks:
+    - name: Generate Configuration Files
+      template:
+        src: jinja2.j2
+        dest: /home/juandbz255/NicoleH/Lesson3/{{ inventory_hostname }}.txt
+        
