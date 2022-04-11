@@ -1,0 +1,27 @@
+---
+- name: 
+  hosts: nxos1:nxos2
+  gather_facts: False
+  tasks:
+    - name: 
+      nxos_interfaces:
+        config:
+          - name: Ethernet1/3
+            description: 
+            enabled: True
+
+    - name: 
+      l2_interface:
+        config:
+          - name: Ethernet1/3
+            mode: trunk
+            native_vlan: 4
+
+    - name:
+      nxos_command:
+        commands: "show interface {{intf_name}} trunk | json"
+      registry: output
+    
+    - debug:
+        var: output
+           

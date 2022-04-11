@@ -1,0 +1,16 @@
+---
+- name:
+  hosts: cisco1:cisco2:cisco5:cisco6
+  tasks:
+    - ios_banner:
+        banner: login
+        text: |
+          This is my router
+        state: present
+      notify: write mem
+
+  handlers:
+    - name: write mem
+      ios_command:
+        commands: write mem
+      changed_when: True    
