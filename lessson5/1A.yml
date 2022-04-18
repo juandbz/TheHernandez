@@ -1,0 +1,19 @@
+---
+- name:
+  hosts: arista:cisco:juniper:nxos
+  tasks: 
+    - eos_config:
+        src: "./templates/eos.j2"
+
+  
+    - ios_config:
+        src: "./templates/ios.j2"
+
+
+    - junos_config: 
+        src: "./templates/junos.j2"
+
+
+    - nxos_config:
+        src: "./templates/nxos.j2"
+
