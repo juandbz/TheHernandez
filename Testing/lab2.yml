@@ -1,0 +1,8 @@
+---
+- name :  
+    gather_facts: true
+    hosts: 
+    connection: network_cli
+    task:
+      debug:
+         msg: "{{ ansible_facts }}" 
