@@ -13,8 +13,11 @@ Nexus2 = {
     "username": "kevin",
     "password": "kevin"
 }
-for n in (Nexus1,Nexus2):
+for n in (Nexus1, Nexus2):
     ssh = ConnectHandler(**n)
     ssh.send_command("show version")
     print(ssh.send_command("show version"))
     print(ssh.find_prompt())
+    ver_output = ssh.send_command("show version")
+    with open('show_ver.txt', 'w') as x:
+        x.write(ver_output)
