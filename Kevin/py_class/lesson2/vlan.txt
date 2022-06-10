@@ -1,0 +1,14 @@
+vlan 150 
+name data
+
+vlan 200
+name hr
+
+vlan 250
+name eng
+
+vlan 300
+name voip
+ 
+vlan 350
+name server
