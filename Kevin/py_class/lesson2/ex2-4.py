@@ -1,3 +1,4 @@
+#creating vlans forom vlan file.
 from netmiko import ConnectHandler
 
 Nexus1 = {
@@ -6,7 +7,6 @@ Nexus1 = {
     "username": "kevin",
     "password": "kevin"
 }
-
 Nexus2 = {
     "device_type": "cisco_nxos",
     "host": "192.168.1.38",
@@ -15,9 +15,6 @@ Nexus2 = {
 }
 for n in (Nexus1, Nexus2):
     ssh = ConnectHandler(**n)
-    ssh.send_command("show version")
-    print(ssh.send_command("show version"))
-    print(ssh.find_prompt())
-    ver_output = ssh.send_command("show version")
-    with open('show_ver.txt', 'w') as x:
-        x.write(ver_output)
+    print(ssh.send_config_from_file("vlan.txt"))
+    print(ssh.save_config())
+    
