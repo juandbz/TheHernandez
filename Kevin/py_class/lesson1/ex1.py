@@ -1,7 +1,7 @@
 from netmiko import ConnectHandler
 
 Nexus = {
-    "device_type": "cisco_nxos",s
+    "device_type": "cisco_nxos",
     "host": "192.168.1.32",
     "username": "kevin",
     "password": "kevin"

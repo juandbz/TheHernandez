@@ -1,0 +1,8 @@
+- device_type: cisco_nxos
+  host: 192.168.1.32
+  password: kevin
+  username: kevin
+- device_type: cisco_nxos
+  host: 192.168.1.38
+  password: kevin
+  username: kevin
