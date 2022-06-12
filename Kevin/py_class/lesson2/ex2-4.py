@@ -15,6 +15,6 @@ Nexus2 = {
 }
 for n in (Nexus1, Nexus2):
     ssh = ConnectHandler(**n)
-    print(ssh.send_config_from_file("vlan.txt"))
+    print(ssh.send_config_from_file("vlans.txt"))
     print(ssh.save_config())
     
