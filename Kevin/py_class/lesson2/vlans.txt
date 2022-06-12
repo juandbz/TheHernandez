@@ -1,0 +1,27 @@
+vlan 150 
+name data
+
+vlan 200
+name hr
+
+vlan 250
+name eng
+
+vlan 300
+name voip
+ 
+vlan 350
+name server
+
+
+vlan 25 
+name test1
+
+vlan 50 
+name test2
+
+vlan 75 
+name test3
+
+vlan 100
+name test4
